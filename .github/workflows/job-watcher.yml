@@ -1,3 +1,4 @@
+
 name: Google Job Watcher
 
 on:
@@ -26,12 +27,24 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+          playwright install --with-deps chromium
 
       - name: Run watcher
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
-          JOB_KEYWORDS: ${{ vars.JOB_KEYWORDS }}
+          MATCH_REGEX: ${{ vars.MATCH_REGEX }}
+          EXCLUDE_REGEX: ${{ vars.EXCLUDE_REGEX }}
         run: python watch_jobs.py
+
+      - name: Upload debug files if extraction fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: newgradjobs-debug
+          path: |
+            debug-newgradjobs.png
+            debug-newgradjobs.html
+          if-no-files-found: ignore
 
       - name: Commit updated seen jobs
         run: |
@@ -39,7 +52,7 @@ jobs:
           git config user.email "job-watcher-bot@users.noreply.github.com"
           if [ -f seen_jobs.json ]; then
             git add seen_jobs.json
-            git diff --cached --quiet || git commit -m "Update seen Google jobs"
+            git diff --cached --quiet || git commit -m "Update seen NewGradJobs roles"
             git push
           else
             echo "seen_jobs.json not found, skipping commit"
