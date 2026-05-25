@@ -13,22 +13,24 @@ SEEN_FILE = Path("seen_jobs.json")
 NTFY_TOPIC = os.environ["NTFY_TOPIC"]
 NTFY_SERVER = os.getenv("NTFY_SERVER", "https://ntfy.sh")
 
-# Only alert on these kinds of NewGradJobs titles
-MATCH_REGEX = os.getenv(
-    "MATCH_REGEX",
+DEFAULT_MATCH_REGEX = (
     r"(Software Engineer\s*(I|II|III|1|2|3)\b|"
     r"Software Engineer III|Software Engineer II|Software Engineer I|"
     r"Full[- ]Stack Software Engineer|"
     r"\bSWE\b|"
     r"New Grad|New Graduate|University Graduate|Early Career|"
-    r"2026.*(Graduate|Residency|Software))",
+    r"2026.*(Graduate|Residency|Software))"
 )
 
-# Avoid obvious non-target senior/management roles unless they are Software Engineer III
-EXCLUDE_REGEX = os.getenv(
-    "EXCLUDE_REGEX",
-    r"(Staff|Principal|Director|Manager|Technical Program Manager|Learning Design|AML|Data Center Technician)",
+DEFAULT_EXCLUDE_REGEX = (
+    r"(Staff|Principal|Director|Manager|Technical Program Manager|"
+    r"Learning Design|AML|Data Center Technician)"
 )
+
+# Important:
+# Use `or DEFAULT...` so empty GitHub variables do not break matching.
+MATCH_REGEX = os.getenv("MATCH_REGEX") or DEFAULT_MATCH_REGEX
+EXCLUDE_REGEX = os.getenv("EXCLUDE_REGEX") or DEFAULT_EXCLUDE_REGEX
 
 
 def load_seen():
@@ -85,12 +87,17 @@ def is_possible_title(text):
         "work model",
         "apply",
         "on site",
+        "onsite",
         "remote",
         "hybrid",
         "hide fields",
         "filter",
         "group",
         "sort",
+        "views",
+        "share",
+        "copy link",
+        "download csv",
     }
 
     if lower in bad:
@@ -102,11 +109,13 @@ def is_possible_title(text):
     if len(text) < 8 or len(text) > 180:
         return False
 
-    # Must look relevant to the roles you care about
+    # Must match target roles:
+    # Software Engineer I/II/III, Software Engineer 1/2/3,
+    # full-stack software roles, SWE, or new-grad style roles.
     if not re.search(MATCH_REGEX, text, re.IGNORECASE):
         return False
 
-    # Exclude obvious non-targets, but keep Software Engineer III
+    # Exclude obvious non-targets, but keep Software Engineer III.
     if re.search(EXCLUDE_REGEX, text, re.IGNORECASE) and not re.search(
         r"Software Engineer\s*(III|3)\b", text, re.IGNORECASE
     ):
@@ -143,15 +152,16 @@ def extract_titles():
         except PlaywrightTimeoutError:
             print("Page load timed out, continuing anyway...")
 
-        # Scroll down so the embedded NewGradJobs table actually renders.
+        # Scroll so the embedded NewGradJobs table renders.
         for _ in range(8):
             page.mouse.wheel(0, 900)
             page.wait_for_timeout(2500)
 
-        # Wait up to 90 sec total for the embedded table text to appear in any frame.
+        # Wait for table text to appear in any frame.
         found_table = False
         for _ in range(18):
             all_text = ""
+
             for frame in page.frames:
                 try:
                     all_text += "\n" + frame.locator("body").inner_text(timeout=3000)
@@ -166,6 +176,8 @@ def extract_titles():
 
         print(f"Found table text: {found_table}")
         print(f"Frame count: {len(page.frames)}")
+        print(f"MATCH_REGEX used: {MATCH_REGEX}")
+        print(f"EXCLUDE_REGEX used: {EXCLUDE_REGEX}")
 
         selectors = [
             ".dataLeftPaneInnerContent",
@@ -179,19 +191,25 @@ def extract_titles():
             for selector in selectors:
                 try:
                     texts = frame.locator(selector).all_inner_texts(timeout=5000)
+
                     for block in texts:
                         for line in block.splitlines():
                             title = clean_title(line)
+
                             if is_possible_title(title):
                                 titles.append(title)
+
                 except Exception:
                     continue
 
-        # Debug files if extraction fails
+        # Debug files if extraction fails.
         if not titles:
             try:
                 page.screenshot(path="debug-newgradjobs.png", full_page=True)
-                Path("debug-newgradjobs.html").write_text(page.content(), encoding="utf-8")
+                Path("debug-newgradjobs.html").write_text(
+                    page.content(),
+                    encoding="utf-8",
+                )
             except Exception as e:
                 print(f"Could not write debug files: {e}")
 
@@ -202,11 +220,13 @@ def extract_titles():
 
     for title in titles:
         key = title.lower()
+
         if key not in seen_lower:
             seen_lower.add(key)
             unique.append(title)
 
     print(f"Relevant NewGradJobs titles found: {len(unique)}")
+
     for title in unique:
         print(f"- {title}")
 
@@ -219,11 +239,12 @@ def main():
 
     titles = extract_titles()
 
-    # Always save file so git commit step does not fail
+    # Always save file so git commit step does not fail.
     if not titles:
         save_seen(seen)
         send_notification(
             f"Watcher ran but found 0 matching NewGradJobs titles.\n\n"
+            f"The table loaded, but no title matched the current filters.\n\n"
             f"Check GitHub Actions debug artifact/screenshot.\n\n{PAGE_URL}",
             title="NewGradJobs Watcher Warning",
         )
@@ -240,6 +261,7 @@ def main():
                 "source": PAGE_URL,
             }
 
+            # First run initializes current jobs without treating them as new.
             if not first_run:
                 new_titles.append(title)
 
