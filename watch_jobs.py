@@ -4,7 +4,7 @@ import re
 import hashlib
 import requests
 from pathlib import Path
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
 PAGE_URL = "https://www.newgrad-jobs.com/entry-level-jobs/google"
 SEEN_FILE = Path("seen_jobs.json")
@@ -65,28 +65,59 @@ def extract_titles():
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        page.goto(PAGE_URL, wait_until="networkidle", timeout=90000)
-        page.wait_for_timeout(5000)
+
+        context = browser.new_context(
+            user_agent=(
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/120.0.0.0 Safari/537.36"
+            ),
+            viewport={"width": 1400, "height": 1200},
+        )
+
+        page = context.new_page()
+
+        # Speed up load by blocking heavy/nonessential assets
+        page.route(
+            "**/*",
+            lambda route: route.abort()
+            if route.request.resource_type in ["image", "font", "media"]
+            else route.continue_(),
+        )
+
+        try:
+            page.goto(PAGE_URL, wait_until="domcontentloaded", timeout=60000)
+        except PlaywrightTimeoutError:
+            print("Initial page load timed out, continuing with whatever loaded...")
+
+        # Give embedded Airtable/table content time to render
+        page.wait_for_timeout(15000)
 
         selectors = [
             ".dataLeftPaneInnerContent",
             ".hover-container .primary .truncate",
             ".primary .truncate",
             "[aria-label*='Position Title']",
+            "text=Software Engineer",
         ]
 
         for frame in page.frames:
             for selector in selectors:
                 try:
-                    texts = frame.locator(selector).all_inner_texts()
+                    texts = frame.locator(selector).all_inner_texts(timeout=5000)
                     for text in texts:
                         for line in text.splitlines():
                             title = clean_title(line)
+
                             if (
                                 len(title) >= 8
                                 and not title.lower().startswith("position title")
-                                and not title.lower() in {"click here", "salary", "work model"}
+                                and title.lower() not in {
+                                    "click here",
+                                    "salary",
+                                    "work model",
+                                    "apply",
+                                }
                                 and not title.isdigit()
                             ):
                                 titles.append(title)
@@ -103,6 +134,10 @@ def extract_titles():
         if key not in seen_lower:
             seen_lower.add(key)
             unique.append(title)
+
+    print(f"Found {len(unique)} titles:")
+    for title in unique[:20]:
+        print(f"- {title}")
 
     return unique
 
