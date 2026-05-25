@@ -13,24 +13,42 @@ SEEN_FILE = Path("seen_jobs.json")
 NTFY_TOPIC = os.environ["NTFY_TOPIC"]
 NTFY_SERVER = os.getenv("NTFY_SERVER", "https://ntfy.sh")
 
-DEFAULT_MATCH_REGEX = (
-    r"(Software Engineer\s*(I|II|III|1|2|3)\b|"
+TOP_N = int(os.getenv("TOP_N", "5"))
+
+# Set to true so your phone gets the current top 5 every 30 minutes.
+ALWAYS_SEND_TOP5 = os.getenv("ALWAYS_SEND_TOP5", "true").lower() == "true"
+
+TARGET_REGEX = (
+    r"Software Engineer\s*(I|II|III|1|2|3)\b|"
     r"Software Engineer III|Software Engineer II|Software Engineer I|"
     r"Full[- ]Stack Software Engineer|"
     r"\bSWE\b|"
     r"New Grad|New Graduate|University Graduate|Early Career|"
-    r"2026.*(Graduate|Residency|Software))"
+    r"2026.*(Graduate|Software|SWE|Residency)"
 )
 
-DEFAULT_EXCLUDE_REGEX = (
-    r"(Staff|Principal|Director|Manager|Technical Program Manager|"
-    r"Learning Design|AML|Data Center Technician)"
-)
-
-# Important:
-# Use `or DEFAULT...` so empty GitHub variables do not break matching.
-MATCH_REGEX = os.getenv("MATCH_REGEX") or DEFAULT_MATCH_REGEX
-EXCLUDE_REGEX = os.getenv("EXCLUDE_REGEX") or DEFAULT_EXCLUDE_REGEX
+BAD_TEXT = {
+    "position title",
+    "salary",
+    "work model",
+    "locations",
+    "company",
+    "application link",
+    "click here",
+    "apply",
+    "remote",
+    "hybrid",
+    "onsite",
+    "on site",
+    "filter",
+    "sort",
+    "group",
+    "hide fields",
+    "views",
+    "share",
+    "copy link",
+    "download csv",
+}
 
 
 def load_seen():
@@ -51,7 +69,7 @@ def make_job_id(title):
     return hashlib.sha256(normalized.encode("utf-8")).hexdigest()[:16]
 
 
-def send_notification(message, title="NewGradJobs Alert"):
+def send_notification(message, title="NewGradJobs Google Alert"):
     url = f"{NTFY_SERVER}/{NTFY_TOPIC}"
     headers = {
         "Title": title,
@@ -67,65 +85,56 @@ def send_notification(message, title="NewGradJobs Alert"):
     response.raise_for_status()
 
 
-def clean_title(text):
+def clean_text(text):
     text = re.sub(r"\s+", " ", text).strip()
     text = re.sub(r"^\d+\s+", "", text).strip()
     return text
 
 
-def is_possible_title(text):
+def looks_like_job_title(text):
+    text = clean_text(text)
+    lower = text.lower()
+
     if not text:
         return False
 
-    text = clean_title(text)
-    lower = text.lower()
-
-    bad = {
-        "position title",
-        "click here",
-        "salary",
-        "work model",
-        "apply",
-        "on site",
-        "onsite",
-        "remote",
-        "hybrid",
-        "hide fields",
-        "filter",
-        "group",
-        "sort",
-        "views",
-        "share",
-        "copy link",
-        "download csv",
-    }
-
-    if lower in bad:
+    if lower in BAD_TEXT:
         return False
 
     if text.isdigit():
         return False
 
-    if len(text) < 8 or len(text) > 180:
+    if len(text) < 8 or len(text) > 140:
         return False
 
-    # Must match target roles:
-    # Software Engineer I/II/III, Software Engineer 1/2/3,
-    # full-stack software roles, SWE, or new-grad style roles.
-    if not re.search(MATCH_REGEX, text, re.IGNORECASE):
-        return False
+    # Keep common job-title-looking rows.
+    title_words = [
+        "engineer",
+        "developer",
+        "software",
+        "full-stack",
+        "full stack",
+        "machine learning",
+        "ai",
+        "data",
+        "analyst",
+        "scientist",
+        "designer",
+        "specialist",
+        "residency",
+        "graduate",
+        "new grad",
+    ]
 
-    # Exclude obvious non-targets, but keep Software Engineer III.
-    if re.search(EXCLUDE_REGEX, text, re.IGNORECASE) and not re.search(
-        r"Software Engineer\s*(III|3)\b", text, re.IGNORECASE
-    ):
-        return False
+    return any(word in lower for word in title_words)
 
-    return True
+
+def is_target_role(title):
+    return bool(re.search(TARGET_REGEX, title, re.IGNORECASE))
 
 
 def extract_titles():
-    titles = []
+    all_candidates = []
 
     with sync_playwright() as p:
         browser = p.chromium.launch(
@@ -152,23 +161,23 @@ def extract_titles():
         except PlaywrightTimeoutError:
             print("Page load timed out, continuing anyway...")
 
-        # Scroll so the embedded NewGradJobs table renders.
-        for _ in range(8):
+        # Scroll down so the embedded NewGradJobs/Airtable table renders.
+        for _ in range(10):
             page.mouse.wheel(0, 900)
             page.wait_for_timeout(2500)
 
-        # Wait for table text to appear in any frame.
+        # Wait for table content.
         found_table = False
         for _ in range(18):
-            all_text = ""
+            combined_text = ""
 
             for frame in page.frames:
                 try:
-                    all_text += "\n" + frame.locator("body").inner_text(timeout=3000)
+                    combined_text += "\n" + frame.locator("body").inner_text(timeout=3000)
                 except Exception:
                     pass
 
-            if "Position Title" in all_text or "Software Engineer" in all_text:
+            if "Position Title" in combined_text or "Software Engineer" in combined_text:
                 found_table = True
                 break
 
@@ -176,34 +185,41 @@ def extract_titles():
 
         print(f"Found table text: {found_table}")
         print(f"Frame count: {len(page.frames)}")
-        print(f"MATCH_REGEX used: {MATCH_REGEX}")
-        print(f"EXCLUDE_REGEX used: {EXCLUDE_REGEX}")
 
-        selectors = [
-            ".dataLeftPaneInnerContent",
-            ".hover-container .primary .truncate",
-            ".primary .truncate",
-            "[aria-label*='Position Title']",
-            "body",
-        ]
-
+        # Method 1: get small visible elements. This works better than grabbing the whole body.
         for frame in page.frames:
-            for selector in selectors:
-                try:
-                    texts = frame.locator(selector).all_inner_texts(timeout=5000)
+            try:
+                texts = frame.locator(
+                    "div, span, a, p, td, th, button"
+                ).evaluate_all(
+                    """
+                    els => els
+                      .map(e => (e.innerText || e.textContent || '').trim())
+                      .filter(t => t && t.length >= 8 && t.length <= 140)
+                    """
+                )
 
-                    for block in texts:
-                        for line in block.splitlines():
-                            title = clean_title(line)
+                for text in texts:
+                    text = clean_text(text)
+                    if looks_like_job_title(text):
+                        all_candidates.append(text)
 
-                            if is_possible_title(title):
-                                titles.append(title)
+            except Exception:
+                pass
 
-                except Exception:
-                    continue
+        # Method 2: fallback using body lines.
+        for frame in page.frames:
+            try:
+                body_text = frame.locator("body").inner_text(timeout=5000)
+                for line in body_text.splitlines():
+                    line = clean_text(line)
+                    if looks_like_job_title(line):
+                        all_candidates.append(line)
+            except Exception:
+                pass
 
         # Debug files if extraction fails.
-        if not titles:
+        if not all_candidates:
             try:
                 page.screenshot(path="debug-newgradjobs.png", full_page=True)
                 Path("debug-newgradjobs.html").write_text(
@@ -218,39 +234,60 @@ def extract_titles():
     unique = []
     seen_lower = set()
 
-    for title in titles:
+    for title in all_candidates:
         key = title.lower()
 
-        if key not in seen_lower:
-            seen_lower.add(key)
-            unique.append(title)
+        # Remove obvious duplicate/truncated junk.
+        if key in seen_lower:
+            continue
 
-    print(f"Relevant NewGradJobs titles found: {len(unique)}")
+        if "position title" in key:
+            continue
 
-    for title in unique:
-        print(f"- {title}")
+        seen_lower.add(key)
+        unique.append(title)
+
+    print(f"Total job-like titles found: {len(unique)}")
+
+    for title in unique[:20]:
+        marker = "TARGET" if is_target_role(title) else "OTHER"
+        print(f"- [{marker}] {title}")
 
     return unique
 
 
+def build_top5_message(top_titles, new_target_titles):
+    message = "Top 5 recent Google jobs from NewGradJobs:\n\n"
+
+    for idx, title in enumerate(top_titles, start=1):
+        marker = " 🎯" if is_target_role(title) else ""
+        message += f"{idx}. {title}{marker}\n"
+
+    if new_target_titles:
+        message += "\nNew target matches:\n"
+        for title in new_target_titles[:10]:
+            message += f"• {title}\n"
+
+    message += f"\nCheck page:\n{PAGE_URL}"
+    return message
+
+
 def main():
     seen = load_seen()
-    first_run = not bool(seen)
-
     titles = extract_titles()
 
-    # Always save file so git commit step does not fail.
     if not titles:
         save_seen(seen)
         send_notification(
-            f"Watcher ran but found 0 matching NewGradJobs titles.\n\n"
-            f"The table loaded, but no title matched the current filters.\n\n"
-            f"Check GitHub Actions debug artifact/screenshot.\n\n{PAGE_URL}",
+            f"Watcher ran but found 0 job titles.\n\n"
+            f"Download the debug artifact from GitHub Actions and inspect the screenshot/html.\n\n"
+            f"{PAGE_URL}",
             title="NewGradJobs Watcher Warning",
         )
         return
 
-    new_titles = []
+    top_titles = titles[:TOP_N]
+    new_target_titles = []
 
     for title in titles:
         job_id = make_job_id(title)
@@ -261,31 +298,31 @@ def main():
                 "source": PAGE_URL,
             }
 
-            # First run initializes current jobs without treating them as new.
-            if not first_run:
-                new_titles.append(title)
+            if is_target_role(title):
+                new_target_titles.append(title)
 
     save_seen(seen)
 
-    if first_run:
+    # This sends the top 5 every run because ALWAYS_SEND_TOP5=true.
+    if ALWAYS_SEND_TOP5:
         send_notification(
-            f"NewGradJobs watcher started.\n\n"
-            f"Initialized with {len(titles)} matching Google software/new-grad titles.\n\n"
-            f"No alerts until a new matching title appears.\n\n{PAGE_URL}",
-            title="NewGradJobs Watcher Started",
+            build_top5_message(top_titles, new_target_titles),
+            title="NewGradJobs Top 5 Google Jobs",
         )
         return
 
-    if new_titles:
-        message = "New Google role on NewGradJobs:\n\n"
+    # If you later set ALWAYS_SEND_TOP5=false, it only alerts on new target roles.
+    if new_target_titles:
+        message = "New target Google role on NewGradJobs:\n\n"
 
-        for title in new_titles[:10]:
+        for title in new_target_titles[:10]:
             message += f"• {title}\n"
 
-        message += f"\nCheck/apply here:\n{PAGE_URL}"
+        message += f"\nCheck page:\n{PAGE_URL}"
+
         send_notification(message)
     else:
-        print("No new matching NewGradJobs roles.")
+        print("No new target roles.")
 
 
 if __name__ == "__main__":
