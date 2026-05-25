@@ -1,0 +1,602 @@
+{
+  "01ae970eea58e365": {
+    "query": "AI ML",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=AI+ML&sort_by=date",
+    "title": "Master's degree in a quantitative discipline such as Statistics, Engineering, Sciences, or equivalent practical experience."
+  },
+  "031502a496975278": {
+    "query": "university graduate",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=university+graduate&sort_by=date",
+    "title": "PhD degree in Electrical Engineering, Computer Engineering, Computer Science, a related field, or equivalent practical experience"
+  },
+  "0a35e34a1e5ba46c": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Experience with state of the art GenAI techniques (e.g., LLMs, Multi-Modal, Large Vision Models) or with GenAI-related concepts (language modeling, computer vision)."
+  },
+  "0ac784f5c0454de5": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "Forward Deployed Engineer IV, Applied AI, Google Cloud"
+  },
+  "0ad603ce692832b4": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "Experience developing SQL data pipelines and predictive dashboards for advanced analysis."
+  },
+  "0e004e013715e6b2": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Experience with backend languages (e.g., Java, Python, or C++)."
+  },
+  "141105419e7a9eb4": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Bachelor\u2019s degree in Computer Science, Engineering, Business Operations, or a related technical field, or equivalent practical experience."
+  },
+  "1618b753149e46ae": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Active or ability to obtain a TS/SCI US Government clearance."
+  },
+  "16531534d3fcce6c": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "3 years of experience testing, maintaining, or launching software products."
+  },
+  "183e1a05237a841c": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Bachelor's degree in Mechanical Engineering, Product Design, Electrical Engineering, a related technical field, or equivalent practical experience."
+  },
+  "18ab982f036779b5": {
+    "query": "full stack",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=full+stack&sort_by=date",
+    "title": "10 years of experience with quota-carrying cloud or software sales, or account management at a Business-to-Business (B2B) software company."
+  },
+  "18c0977ac7ed4911": {
+    "query": "AI ML",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=AI+ML&sort_by=date",
+    "title": "7 years of experience using analytics to solve product or business problems, coding (e.g., Python, R, SQL), querying databases or statistical analysis."
+  },
+  "19b211f6e8865a5a": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Experience architecting AI systems on cloud platforms (e.g., Google Cloud Platform (GCP)."
+  },
+  "1a33e4633728f5a7": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Experience with database query languages (e.g., SQL) and data modeling techniques."
+  },
+  "1b02ae39c5054e6b": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "PMax and Automation Infra Software Engineer"
+  },
+  "1b40750a217323ce": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Data Center Mechanical Engineer, Cooling Systems"
+  },
+  "1e1a65419330d176": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Experience architecting AI systems on cloud platforms (e.g., GCP)."
+  },
+  "1ef802b6c22e7642": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "Experience building or leveraging AI solutions, ML APIs, prompting, agent tooling, evaluation frameworks, and modern AI frameworks, and embedding into demos."
+  },
+  "242ff2f3e2058bcb": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "5 years of experience testing, and launching software products, and 3 years of experience with software design and architecture."
+  },
+  "24373d2b7edc6f69": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Software Engineer III, Cloud Security, Identity and Access Management"
+  },
+  "2502034a7c88f297": {
+    "query": "AI ML",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=AI+ML&sort_by=date",
+    "title": "Software Engineer III, AI/ML GenAI, Google Workspace"
+  },
+  "26bbcfb758749540": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "5 years of experience with software development in Java and Kotlin."
+  },
+  "27a5cc2c8b7b574e": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "2 years of experience with software development in Python and C++ programming languages, or 1 year of experience with an advanced degree."
+  },
+  "27b6ae42bfd06e40": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Experience building full-stack applications that interact with enterprise IT infrastructures and developing external customer projects."
+  },
+  "28c3ab134ef038ee": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Software Engineer III, Mobile (iOS), Google Photos"
+  },
+  "2b92e0b10d400175": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "5 years of experience testing, maintaining, or launching software products."
+  },
+  "2e102649bb13537a": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "2 years of experience with backend and server-side programming."
+  },
+  "327ea01fae6b9ceb": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "1 year of experience with Machine Learning, specifically reinforcement learning (e.g., sequential decision making)."
+  },
+  "32d3f2a92230ddbe": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Forward Deployed Engineer I, Applied AI, Google Cloud"
+  },
+  "3710c43348f25da5": {
+    "query": "university graduate",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=university+graduate&sort_by=date",
+    "title": "Experience with electrical engineering and signal integrity."
+  },
+  "37de97e18871f69b": {
+    "query": "full stack",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=full+stack&sort_by=date",
+    "title": "Software Engineer III, Infrastructure, Platforms Infrastructure Engineering"
+  },
+  "3893dd5d7691e62a": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "10 years of experience in data analytics, trust and safety, policy, cybersecurity, business strategy, or related fields."
+  },
+  "394b6b886eacc3dd": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Experience with software engineering productivity."
+  },
+  "3975cabdf6703a56": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Android Application Engineer, Google Fi"
+  },
+  "39da9fcd60342b16": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "2 years of experience with software development in one or more programming languages, or 1 year of experience with an advanced degree."
+  },
+  "3d0f9def8dd66708": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "Customer Solutions Engineer"
+  },
+  "3d896cd3b7362102": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "10 years of experience managing the full software development lifecycle for enterprise-level internal tools or platform solutions."
+  },
+  "3ee826c5b7c5c5dd": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "5 years of experience with design and architecture; and testing/launching software products."
+  },
+  "3f2c9f19f74edbe3": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Experience owning outcomes and decision making, solving ambiguous problems and influencing stakeholders; deep expertise in domain."
+  },
+  "3f5f3f7faeb0ab6d": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "3 years of experience working with client-side web technologies (e.g., HTML, CSS, JavaScript, or HTTP)."
+  },
+  "3f6acfd55b109776": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Experience in HTML, CSS, JavaScript/TypeScript, and Angular development."
+  },
+  "409416246095a5e9": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Data Center Technician II"
+  },
+  "426ef804d8ff71fb": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "13 years of experience in data analytics, trust and safety, policy, cybersecurity, business strategy, or related fields."
+  },
+  "4566435e5b6c11bf": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "5 years of experience with ML/AI algorithms and tools, deep learning or other AI/ML modeling."
+  },
+  "4614a83d28561463": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Experience developing or launching products or technologies within artificial intelligence or machine learning (AI/ML)."
+  },
+  "482ae1f5db4c16e7": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "Practice Customer Engineer, Applied AI, Google Public Sector"
+  },
+  "4d4d20fd9c210ec3": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Email a friend"
+  },
+  "51f05398736f7e14": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "Bachelor's degree in Electrical/Computer Engineering, Computer Science, a related technical field, or equivalent practical experience."
+  },
+  "525a043eea56d1ef": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "1 year of experience with software design, architecture, and machine learning."
+  },
+  "5325e50d4b82aaf2": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "8 years of experience with software development using Python or similar coding languages."
+  },
+  "55c42a62d893635a": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "2 years of experience in software development with Java or C++."
+  },
+  "55f6c950e645eedf": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "1 year of experience with software design and architecture."
+  },
+  "56348cba60711689": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "5 years of experience with software development using Python or similar coding languages."
+  },
+  "571b5e65ddec1039": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Software Engineer, Gemini Enterprise Mobile, iOS"
+  },
+  "5797ce1a2450cf7c": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "1 year of experience in data analysis, including identifying trends, generating summary statistics, and drawing insights from quantitative and qualitative data."
+  },
+  "59166daacaa30a09": {
+    "query": "university graduate",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=university+graduate&sort_by=date",
+    "title": "Silicon CAD Engineer, University Graduate, PhD"
+  },
+  "5bced4a8483a19f6": {
+    "query": "university graduate",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=university+graduate&sort_by=date",
+    "title": "Internship experience in network engineering, data center, system administration, or another technical capacity."
+  },
+  "5f5dd3b7c2366210": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "1 year of experience with software development using Python or similar coding languages."
+  },
+  "6babdacf6376fe9e": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "8 years of experience with software development."
+  },
+  "6c15ea100b3ab3bf": {
+    "query": "university graduate",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=university+graduate&sort_by=date",
+    "title": "Hardware Architecture Modeling Engineer, PhD, University Graduate"
+  },
+  "70f33e6491b80b4a": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "4 years of experience in full-stack software development and system design."
+  },
+  "7346360875c9e20c": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "5 years of experience testing, and launching software products."
+  },
+  "74f0650c1dd835ee": {
+    "query": "university graduate",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=university+graduate&sort_by=date",
+    "title": "PhD degree in Electrical Engineering, Computer Engineering, Computer Science, a related field, or equivalent practical experience."
+  },
+  "76aca4b567245dbe": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "5 years of experience with software development in C++, C, or Python."
+  },
+  "76ff0eac861d8075": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "; Mountain View, CA, USA"
+  },
+  "7c152a593652bccb": {
+    "query": "university graduate",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=university+graduate&sort_by=date",
+    "title": "Hardware Validation Engineer, ML Products, University Graduate"
+  },
+  "7cb2ba5cc114f980": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Software Engineer, Generative AI, Geo Consumer"
+  },
+  "81dcad0f7e02e36d": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "1 year of experience with ML infrastructure (e.g., model deployment, model evaluation, optimization, data processing, debugging)."
+  },
+  "83788ffc3bcdb4ae": {
+    "query": "university graduate",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=university+graduate&sort_by=date",
+    "title": "Bachelor\u2019s degree in Electrical Engineering, Computer Engineering, Physics, a related field, or equivalent practical experience."
+  },
+  "83b625c31f98b05a": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "8 years of experience in software development."
+  },
+  "8a042228a04ba9af": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "10 years of experience in a sales role in the enterprise software or cloud space."
+  },
+  "8d95953f7828210e": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Software Engineer III, Recommendation Quality, Google Play"
+  },
+  "8fabd38fd99f345b": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Experience with performing component-level repairs and troubleshooting on technical equipment."
+  },
+  "9745d688c86c2ec1": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Forward Deployed Engineer III, Google Cloud, Applied AI"
+  },
+  "9b5405f89424cf7f": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "2 years of experience building and deploying generative model applications, including techniques such as prompt engineering, prompt rewriting/tuning, and post-training evaluation."
+  },
+  "9d445be5fd90badb": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "3 years of experience testing, maintaining, or launching software products, and 1 year of experience with software design and architecture."
+  },
+  "a18955acf12c4891": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Mountain View, CA, USA"
+  },
+  "a5cf97c036ca7be5": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "10 years of experience in a technical program management (TPgM) or product management role within the infrastructure, construction, or data center environments."
+  },
+  "a8806e09e98cb375": {
+    "query": "AI ML",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=AI+ML&sort_by=date",
+    "title": "3 years of people management experience building, mentoring, and scaling technical teams of data scientists or engineers."
+  },
+  "a9c05b3bfea6ba8e": {
+    "query": "full stack",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=full+stack&sort_by=date",
+    "title": "Customer Engineer III, Platform, Google Cloud"
+  },
+  "ad76098aec17ef35": {
+    "query": "university graduate",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=university+graduate&sort_by=date",
+    "title": "Network Operations Residency Program, University Graduate, August 2026 Start"
+  },
+  "ae13954315c7c53c": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Experience with air and liquid-cooled data center environments, Linux testing environments, and high-power test environments."
+  },
+  "b098922b5294f62d": {
+    "query": "new grad",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=new+grad&sort_by=date",
+    "title": "Search again or try updating your filters"
+  },
+  "b3186e80d64921e9": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Experience with backend development."
+  },
+  "b3f472555e27a0a0": {
+    "query": "university graduate",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=university+graduate&sort_by=date",
+    "title": "Network Operations Residency Program, University Graduate, 2026 Start"
+  },
+  "b5694771955c1313": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Software Engineer, Autocap"
+  },
+  "b691a3b241b0917a": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "2 years of experience with software development."
+  },
+  "bad62f5032a4ab16": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Software Engineer III, Speech Production, Infrastructure"
+  },
+  "bb1bcdd0da5f375b": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Bachelor\u2019s degree in Engineering, Computer Science, a related field, or equivalent practical experience."
+  },
+  "bbb679fb9bcaecda": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Web Solution Engineer, GCS Engineering, gTech"
+  },
+  "bbcbe1328bfcc067": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "Software Engineer III, AI/ML, Image Recommendation Modeling"
+  },
+  "bdd81954b44e2319": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "AML Transaction Monitoring Analyst"
+  },
+  "be6344d4e5e4861b": {
+    "query": "AI ML",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=AI+ML&sort_by=date",
+    "title": "1 year of experience with state of the art GenAI techniques (e.g., LLMs, Multi-Modal, Large Vision Models) or with GenAI-related concepts (language modeling, computer vision)."
+  },
+  "c0333241fd6a6ae1": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "Ability to obtain a Secret security clearance."
+  },
+  "c2e210b2935baf3c": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "Experience architecting AI systems on cloud platforms (e.g., Google Clloud Platform (GCP)."
+  },
+  "c301bbefdf0f636f": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Software Engineer III, Google Play, AI Game Assistant"
+  },
+  "c4303ef528e98c76": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "Bachelor's degree in Mechanical or Industrial Engineering, related discipline, or equivalent practical experience."
+  },
+  "c64e19a70ba8816f": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "Software Engineer III, Mobile (Android), Google Photos"
+  },
+  "ca6650023d43f729": {
+    "query": "AI ML",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=AI+ML&sort_by=date",
+    "title": "Experience with core GenAI concepts (LLM, Multi-Modal, Large Vision Models) and experience with text, image, video, or audio generation."
+  },
+  "ccbfd5991ca96db3": {
+    "query": "university graduate",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=university+graduate&sort_by=date",
+    "title": "Bachelor's degree in Telecommunications, Electrical Engineering, Computer Engineering, or a related field, or equivalent practical experience."
+  },
+  "ce50d5d8f5d5db71": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "5 years of experience with software development in one or more programming languages."
+  },
+  "d04b59d268c19c2d": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "2 years of experience with back-end software development."
+  },
+  "d15afe254629f664": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "Software Engineer III, AI/ML, Google Cloud AI"
+  },
+  "d417516b75070b65": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "2 years of experience in general software development."
+  },
+  "dafb6ff5f6039a64": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "1 year of experience with ML infrastructure (e.g., model deployment, model evaluation, data processing, debugging)."
+  },
+  "dd971c894c703fe3": {
+    "query": "AI ML",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=AI+ML&sort_by=date",
+    "title": "Software Engineer III, AI/ML GenAI, Google Ads"
+  },
+  "e5344cb8b8c0d2bd": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "Experience conducting Machine Learning Financial Planning and Analysis (ML FP&A)."
+  },
+  "e6bcaef0d761b751": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "3 years of experience in human computation or data labeling."
+  },
+  "e6dfb0cda2319ad2": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "5 years of experience with ML design and ML infrastructure (e.g., model deployment, model evaluation, data processing, debugging, fine tuning)."
+  },
+  "ee522d0e59412d6a": {
+    "query": "AI ML",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=AI+ML&sort_by=date",
+    "title": "3 years of experience with ML infrastructure (e.g., model deployment, model evaluation, optimization, data processing, debugging)."
+  },
+  "ee7b845c6b5210a4": {
+    "query": "university graduate",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=university+graduate&sort_by=date",
+    "title": "Experience in any one domain of computer engineering or silicon engineering through internships, academic research, or publications (e.g., co-design, digital design, architecture)."
+  },
+  "f175684278bd360c": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "Experience designing, developing, and optimizing backend systems."
+  },
+  "f44417fb6933fe92": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "Experience with Conversational AI technologies, including designing conversational flows/agents and operating Speech-to-Text, Text-to-Speech (STT/TTS)."
+  },
+  "f5d23948d876575d": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "1 year of experience in an analytical, data science, or quantitative risk management role within AML compliance, trust and safety, or financial services."
+  },
+  "f67f5827d331f61f": {
+    "query": "machine learning",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
+    "title": "6 years of experience working with client-side web technologies (e.g., HTML, CSS, JavaScript, or HTTP)."
+  },
+  "fae3cf7e8164ce53": {
+    "query": "full stack",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=full+stack&sort_by=date",
+    "title": "Experience with cloud engineering, on-premise engineering, virtualization, or containerization platforms."
+  },
+  "fc5d8827b8c4914b": {
+    "query": "backend",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
+    "title": "2 years of experience developing and maintaining software using C++."
+  },
+  "fc945e18c30c5914": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "3 years of experience with machine learning (ML) infrastructure (e.g., model deployment, model evaluation, optimization, data processing, or debugging)."
+  },
+  "fd107d919739fc62": {
+    "query": "AI ML",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=AI+ML&sort_by=date",
+    "title": "Software Engineer III, AI/ML, Google Ads"
+  },
+  "ff87d525204482c7": {
+    "query": "software engineer",
+    "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
+    "title": "2 years of experience with GenAI techniques (e.g., LLMs, Multi-Modal, Large Vision Models) or with GenAI-related concepts (language modeling, computer vision)."
+  }
+}
