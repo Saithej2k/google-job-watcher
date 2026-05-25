@@ -1,4 +1,3 @@
-
 name: Google Job Watcher
 
 on:
@@ -32,8 +31,6 @@ jobs:
       - name: Run watcher
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
-          MATCH_REGEX: ${{ vars.MATCH_REGEX }}
-          EXCLUDE_REGEX: ${{ vars.EXCLUDE_REGEX }}
         run: python watch_jobs.py
 
       - name: Upload debug files if extraction fails
@@ -50,6 +47,7 @@ jobs:
         run: |
           git config user.name "job-watcher-bot"
           git config user.email "job-watcher-bot@users.noreply.github.com"
+
           if [ -f seen_jobs.json ]; then
             git add seen_jobs.json
             git diff --cached --quiet || git commit -m "Update seen NewGradJobs roles"
