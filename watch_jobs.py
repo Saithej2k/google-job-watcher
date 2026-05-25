@@ -1,22 +1,47 @@
+import hashlib
 import json
 import os
 import re
-import hashlib
-import requests
 from pathlib import Path
-from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
+from urllib.parse import urlencode
 
-PAGE_URL = "https://www.newgrad-jobs.com/entry-level-jobs/google"
+import requests
+from bs4 import BeautifulSoup
+
 SEEN_FILE = Path("seen_jobs.json")
 
-DEFAULT_KEYWORDS = (
-    r"Software|Engineer|AI|ML|Machine Learning|Data|Backend|Full-Stack|"
-    r"SWE|Residency|University Graduate|New Grad"
-)
-
-KEYWORDS = os.getenv("JOB_KEYWORDS") or DEFAULT_KEYWORDS
 NTFY_TOPIC = os.environ["NTFY_TOPIC"]
 NTFY_SERVER = os.getenv("NTFY_SERVER", "https://ntfy.sh")
+
+DEFAULT_KEYWORDS = (
+    r"Software|Engineer|AI|ML|Machine Learning|Data|Backend|Full[- ]?Stack|"
+    r"SWE|Residency|University Graduate|New Grad|Early Career"
+)
+
+DEFAULT_EXCLUDE = r"Senior|Staff|Principal|Manager|Director|Lead"
+
+KEYWORDS = os.getenv("JOB_KEYWORDS") or DEFAULT_KEYWORDS
+EXCLUDE_KEYWORDS = os.getenv("EXCLUDE_KEYWORDS") or DEFAULT_EXCLUDE
+
+BASE_URL = "https://www.google.com/about/careers/applications/jobs/results/"
+
+SEARCH_TERMS = [
+    "software engineer",
+    "machine learning",
+    "AI ML",
+    "backend",
+    "full stack",
+    "university graduate",
+    "new grad",
+]
+
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0.0.0 Safari/537.36"
+    )
+}
 
 
 def load_seen():
@@ -33,7 +58,7 @@ def save_seen(seen):
 
 
 def make_job_id(title):
-    normalized = title.lower().strip()
+    normalized = re.sub(r"\s+", " ", title.lower().strip())
     return hashlib.sha256(normalized.encode("utf-8")).hexdigest()[:16]
 
 
@@ -53,140 +78,158 @@ def send_notification(message, title="Google Job Alert"):
     response.raise_for_status()
 
 
-def clean_title(title):
-    title = re.sub(r"\s+", " ", title).strip()
-    title = re.sub(r"^\d+\s+", "", title).strip()
-    title = title.replace("Apply", "").strip()
-    return title
+def google_careers_url(query):
+    params = {
+        "company": "Google",
+        "employment_type": "FULL_TIME",
+        "hl": "en_US",
+        "jlo": "en_US",
+        "location": "United States",
+        "q": query,
+        "sort_by": "date",
+    }
+    return BASE_URL + "?" + urlencode(params)
 
 
-def extract_titles():
-    titles = []
+def clean_line(line):
+    line = re.sub(r"\s+", " ", line).strip()
+    line = line.strip("•").strip()
+    return line
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
 
-        context = browser.new_context(
-            user_agent=(
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/120.0.0.0 Safari/537.36"
-            ),
-            viewport={"width": 1400, "height": 1200},
-        )
+def looks_like_job_title(line):
+    if len(line) < 8 or len(line) > 180:
+        return False
 
-        page = context.new_page()
+    bad_phrases = [
+        "jobs search results",
+        "jobs matched",
+        "showing",
+        "follow life at google",
+        "about us",
+        "related information",
+        "equal opportunity",
+        "privacy",
+        "terms",
+        "google apps",
+        "main menu",
+        "search jobs",
+        "back to jobs",
+        "job not found",
+        "apply",
+        "help",
+    ]
 
-        # Speed up load by blocking heavy/nonessential assets
-        page.route(
-            "**/*",
-            lambda route: route.abort()
-            if route.request.resource_type in ["image", "font", "media"]
-            else route.continue_(),
-        )
+    lower = line.lower()
 
+    if any(phrase in lower for phrase in bad_phrases):
+        return False
+
+    if re.search(EXCLUDE_KEYWORDS, line, re.IGNORECASE):
+        return False
+
+    return bool(re.search(KEYWORDS, line, re.IGNORECASE))
+
+
+def extract_jobs_from_google_careers(query):
+    url = google_careers_url(query)
+    response = requests.get(url, headers=HEADERS, timeout=30)
+    response.raise_for_status()
+
+    soup = BeautifulSoup(response.text, "html.parser")
+    text = soup.get_text("\n")
+
+    if "Jobs search results" in text:
+        text = text.split("Jobs search results", 1)[1]
+
+    if "Showing 1 to" in text:
+        text = text.split("Showing 1 to", 1)[0]
+
+    jobs = []
+
+    for raw_line in text.splitlines():
+        line = clean_line(raw_line)
+
+        if looks_like_job_title(line):
+            jobs.append(
+                {
+                    "title": line,
+                    "source_url": url,
+                    "query": query,
+                }
+            )
+
+    return jobs
+
+
+def extract_all_jobs():
+    all_jobs = []
+    seen_titles = set()
+
+    for query in SEARCH_TERMS:
         try:
-            page.goto(PAGE_URL, wait_until="domcontentloaded", timeout=60000)
-        except PlaywrightTimeoutError:
-            print("Initial page load timed out, continuing with whatever loaded...")
+            jobs = extract_jobs_from_google_careers(query)
+            print(f"{query}: found {len(jobs)} possible matches")
 
-        # Give embedded Airtable/table content time to render
-        page.wait_for_timeout(15000)
+            for job in jobs:
+                key = job["title"].lower()
+                if key not in seen_titles:
+                    seen_titles.add(key)
+                    all_jobs.append(job)
 
-        selectors = [
-            ".dataLeftPaneInnerContent",
-            ".hover-container .primary .truncate",
-            ".primary .truncate",
-            "[aria-label*='Position Title']",
-            "text=Software Engineer",
-        ]
+        except Exception as e:
+            print(f"Failed query '{query}': {e}")
 
-        for frame in page.frames:
-            for selector in selectors:
-                try:
-                    texts = frame.locator(selector).all_inner_texts(timeout=5000)
-                    for text in texts:
-                        for line in text.splitlines():
-                            title = clean_title(line)
-
-                            if (
-                                len(title) >= 8
-                                and not title.lower().startswith("position title")
-                                and title.lower() not in {
-                                    "click here",
-                                    "salary",
-                                    "work model",
-                                    "apply",
-                                }
-                                and not title.isdigit()
-                            ):
-                                titles.append(title)
-                except Exception:
-                    continue
-
-        browser.close()
-
-    unique = []
-    seen_lower = set()
-
-    for title in titles:
-        key = title.lower()
-        if key not in seen_lower:
-            seen_lower.add(key)
-            unique.append(title)
-
-    print(f"Found {len(unique)} titles:")
-    for title in unique[:20]:
-        print(f"- {title}")
-
-    return unique
+    return all_jobs
 
 
 def main():
     seen = load_seen()
     first_run = not bool(seen)
 
-    titles = extract_titles()
+    jobs = extract_all_jobs()
 
-    if not titles:
+    # Always create seen_jobs.json so GitHub commit step does not fail.
+    if not jobs:
+        save_seen(seen)
         send_notification(
-            f"Watcher ran but found no job titles.\n\nCheck manually:\n{PAGE_URL}",
+            "Watcher ran but found 0 Google Careers matches. Check workflow logs.",
             title="Job Watcher Warning",
         )
         return
 
-    keyword_pattern = re.compile(KEYWORDS, re.IGNORECASE)
+    new_jobs = []
 
-    new_matches = []
-
-    for title in titles:
-        job_id = make_job_id(title)
+    for job in jobs:
+        job_id = make_job_id(job["title"])
 
         if job_id not in seen:
-            seen[job_id] = {
-                "title": title,
-                "source": PAGE_URL,
-            }
+            seen[job_id] = job
 
-            if not first_run and keyword_pattern.search(title):
-                new_matches.append(title)
+            if not first_run:
+                new_jobs.append(job)
 
     save_seen(seen)
 
+    print(f"Total matching jobs found: {len(jobs)}")
+    print(f"New jobs found: {len(new_jobs)}")
+
     if first_run:
         send_notification(
-            f"Watcher initialized with {len(titles)} current Google jobs.\n\n"
-            f"No alerts will be sent until new matching jobs appear.\n\n{PAGE_URL}",
+            f"Google job watcher started.\n\n"
+            f"Initialized with {len(jobs)} current matching jobs.\n\n"
+            f"No new-job alerts until something new appears.",
             title="Job Watcher Started",
         )
         return
 
-    if new_matches:
+    if new_jobs:
         message = "New Google job match found:\n\n"
-        for title in new_matches[:10]:
-            message += f"• {title}\n"
 
-        message += f"\nCheck/apply here:\n{PAGE_URL}"
+        for job in new_jobs[:10]:
+            message += f"• {job['title']}\n"
+
+        message += f"\nSearch/apply:\n{BASE_URL}"
         send_notification(message)
     else:
         print("No new matching jobs.")
