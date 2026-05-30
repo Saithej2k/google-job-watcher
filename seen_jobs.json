@@ -91,6 +91,10 @@
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
     "title": "Data Center Mechanical Engineer, Cooling Systems"
   },
+  "1b74dfb991c32505": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Hardware Validation Engineer, Cloud Platforms"
+  },
   "1cffed1e8d9eb5e8": {
     "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
     "title": "Software Engineer III, Infrastructure, Google Cloud AI"
@@ -170,6 +174,10 @@
     "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
     "title": "PhD Residency - LLM Harness Engineering for Industrial Systems (Early Stage Project)"
   },
+  "3274ffcb4bd1d253": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "ASIC Design Verification Engineer, Google Cloud"
+  },
   "327ea01fae6b9ceb": {
     "query": "machine learning",
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
@@ -214,6 +222,10 @@
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
     "title": "2 years of experience with software development in one or more programming languages, or 1 year of experience with an advanced degree."
   },
+  "3c7a40afc1da96ef": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Engineering Analyst, Trust and Safety, Egregious Harms"
+  },
   "3d0f9def8dd66708": {
     "query": "machine learning",
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
@@ -251,6 +263,10 @@
   "404d2f0ce22df424": {
     "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
     "title": "Research Scientist/Engineer, Autonomous Security, DeepMind"
+  },
+  "407cd4615e6f8a59": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Software Engineer III, Infrastructure, Google Cloud Platforms"
   },
   "409416246095a5e9": {
     "query": "software engineer",
@@ -342,6 +358,10 @@
     "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
     "title": "2026 PhD / Master's Residency - Future of Work and Smart Velocity"
   },
+  "585830e8c49b3a53": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Software Engineer III, Mobile (iOS), Google One"
+  },
   "59166daacaa30a09": {
     "query": "university graduate",
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=university+graduate&sort_by=date",
@@ -388,6 +408,10 @@
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
     "title": "4 years of experience in full-stack software development and system design."
   },
+  "732e7c983fb3a5b0": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Software Engineer III, Privacy, Safety and Security"
+  },
   "7346360875c9e20c": {
     "query": "backend",
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
@@ -422,9 +446,17 @@
     "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
     "title": "Data Center Technician"
   },
+  "7f5961735833e76d": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "SAP Application Engineer, Supply Chain Logistics"
+  },
   "7fe27be18bf5980f": {
     "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
     "title": "2026 PhD / Master's Residency - Rapid Evaluation Techno-Economic Analysis (TEA)"
+  },
+  "816808f0f377506b": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Software Engineer III, Infrastructure, Search"
   },
   "81dcad0f7e02e36d": {
     "query": "software engineer",
@@ -472,6 +504,14 @@
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
     "title": "Experience with performing component-level repairs and troubleshooting on technical equipment."
   },
+  "91452d55285506b0": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Software Engineer III, Infrastructure, Core"
+  },
+  "93411b1ae01b896d": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Software Engineer I, Mobile (Android), Gmail"
+  },
   "96452b3c43d79175": {
     "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
     "title": "Engineering Analyst, Payments Trust and Safety"
@@ -518,6 +558,10 @@
     "query": "full stack",
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=full+stack&sort_by=date",
     "title": "Customer Engineer III, Platform, Google Cloud"
+  },
+  "ab901dc20f69fdd3": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Software Engineer, Personalization Platform, Core"
   },
   "acd362050f97ece9": {
     "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
