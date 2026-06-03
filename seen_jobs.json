@@ -60,6 +60,10 @@
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
     "title": "3 years of experience testing, maintaining, or launching software products."
   },
+  "175c221df0825897": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Software Engineer III, Infrastructure, Google Cloud Networking"
+  },
   "183e1a05237a841c": {
     "query": "software engineer",
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
@@ -221,6 +225,10 @@
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=university+graduate&sort_by=date",
     "title": "Experience with electrical engineering and signal integrity."
   },
+  "373df644caa324e5": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Software Engineer III, Confidential Computing, Google Cloud Platform"
+  },
   "37de97e18871f69b": {
     "query": "full stack",
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=full+stack&sort_by=date",
@@ -235,6 +243,10 @@
     "query": "backend",
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
     "title": "Experience with software engineering productivity."
+  },
+  "39567077e208e98d": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Configuration Engineer Technical Program Manager, Manufacturing"
   },
   "3975cabdf6703a56": {
     "query": "backend",
@@ -468,6 +480,10 @@
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
     "title": "; Mountain View, CA, USA"
   },
+  "78e99e164f9a61dc": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "IP DFT Engineer"
+  },
   "7c152a593652bccb": {
     "query": "university graduate",
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=university+graduate&sort_by=date",
@@ -565,6 +581,10 @@
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=software+engineer&sort_by=date",
     "title": "Forward Deployed Engineer III, Google Cloud, Applied AI"
   },
+  "9aec79aa1f316896": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Software Engineer III, Search, Mobile (Android)"
+  },
   "9b5405f89424cf7f": {
     "query": "backend",
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=backend&sort_by=date",
@@ -610,6 +630,10 @@
   "acd362050f97ece9": {
     "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
     "title": "2026 PhD Residency - LLM Harness Engineering for Industrial Systems (Early Stage Project)"
+  },
+  "ad1e4ed6bfc8920f": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Software Engineer, TPU Host Networking"
   },
   "ad76098aec17ef35": {
     "query": "university graduate",
@@ -697,6 +721,10 @@
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
     "title": "Ability to obtain a Secret security clearance."
   },
+  "c0dee9ef1dfc21eb": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Software Engineer AI/ML Networking"
+  },
   "c134ef24073f4ee7": {
     "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
     "title": "Learning Design Specialist"
@@ -725,10 +753,18 @@
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=machine+learning&sort_by=date",
     "title": "Software Engineer III, Mobile (Android), Google Photos"
   },
+  "c9b5be40ed6fca7d": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Engineering Analyst, Payments Trust and Safety 2 Engineering Analyst, Trust and Safety Payments"
+  },
   "ca6650023d43f729": {
     "query": "AI ML",
     "source_url": "https://www.google.com/about/careers/applications/jobs/results/?company=Google&employment_type=FULL_TIME&hl=en_US&jlo=en_US&location=United+States&q=AI+ML&sort_by=date",
     "title": "Experience with core GenAI concepts (LLM, Multi-Modal, Large Vision Models) and experience with text, image, video, or audio generation."
+  },
+  "cc08876a3c35e9de": {
+    "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
+    "title": "Data Center Technician II (Night Shift)"
   },
   "cc6bb7b79337b586": {
     "source": "https://www.newgrad-jobs.com/entry-level-jobs/google",
